@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\DataMasterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [MainController::class, 'index'])->name('index');
+Route::get('/makanan', [DataMasterController::class, 'makanan'])->name('makanan');
+Route::get('/pelanggan', [DataMasterController::class, 'pelanggan'])->name('pelanggan');
+Route::get('/pegawai', [DataMasterController::class, 'pegawai'])->name('pegawai');
+Route::get('/meja', [DataMasterController::class, 'meja'])->name('meja');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
