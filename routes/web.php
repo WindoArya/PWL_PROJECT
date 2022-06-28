@@ -14,14 +14,14 @@ use App\Http\Controllers\DataMasterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 Route::get('/', [MainController::class, 'index'])->name('index');
+
 Route::get('/makanan', [DataMasterController::class, 'makanan'])->name('makanan');
 Route::get('/minuman', [DataMasterController::class, 'minuman'])->name('minuman');
 Route::get('/pelanggan', [DataMasterController::class, 'pelanggan'])->name('pelanggan');
 Route::get('/pegawai', [DataMasterController::class, 'pegawai'])->name('pegawai');
-Route::get('/meja', [DataMasterController::class, 'meja'])->name('meja');
 Route::get('/pengeluaran', [DataMasterController::class, 'pengeluaran'])->name('pengeluaran');
 
-Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

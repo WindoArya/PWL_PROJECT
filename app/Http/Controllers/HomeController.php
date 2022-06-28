@@ -23,9 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Home');
-        //return view('Main.dashboard')
-            //->with('category', 'Home')
-            //->with('title', 'Dashboard');
+        //return view('Home');
+        return view('Main.dashboard')
+            ->with('category', 'Home')
+            ->with('title', 'Dashboard');
     }
 }

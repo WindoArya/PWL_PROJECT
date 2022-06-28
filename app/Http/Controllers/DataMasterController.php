@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class DataMasterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function makanan(){
         return view('Main.makanan')
             ->with('category', 'Tabel Data Master')
@@ -25,11 +30,6 @@ class DataMasterController extends Controller
         return view('Main.pegawai')
             ->with('category', 'Tabel Data Master')
             ->with('title', 'Data Pegawai');
-    }
-    public function meja(){
-        return view('Main.meja')
-            ->with('category', 'Tabel Data Master')
-            ->with('title', 'Data Meja');
     }
     public function pengeluaran(){
         return view('Main.pengeluaran')
