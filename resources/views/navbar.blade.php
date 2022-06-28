@@ -27,6 +27,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="{{url('/minuman')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Minuman</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="{{url('/pelanggan')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Pelanggan</p>
@@ -44,7 +50,12 @@
                     <p>Data Meja</p>
                   </a>
                 </li>
-              </ul>
+                <li class="nav-item">
+                  <a href="{{url('/pengeluaran')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Pengeluaran</p>
+                  </a>
+              </ul> 
             </li>
             <!-- Tabel Transaksi -->
             <li class="nav-item">

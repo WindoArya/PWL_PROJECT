@@ -11,6 +11,11 @@ class DataMasterController extends Controller
             ->with('category', 'Tabel Data Master')
             ->with('title', 'Data Makanan');
     }
+    public function minuman(){
+        return view('Main.minuman')
+            ->with('category', 'Tabel Data Master')
+            ->with('title', 'Data Minuman');
+    }
     public function pelanggan(){
         return view('Main.pelanggan')
             ->with('category', 'Tabel Data Master')
@@ -25,5 +30,10 @@ class DataMasterController extends Controller
         return view('Main.meja')
             ->with('category', 'Tabel Data Master')
             ->with('title', 'Data Meja');
+    }
+    public function pengeluaran(){
+        return view('Main.pengeluaran')
+        ->with('category', 'Tabel Data Master')
+        ->with('title', 'Data Pengeluaran');
     }
 }
