@@ -1,4 +1,4 @@
-@extends('makanan.layout')
+@extends('crud.layout')
  
 @section('content')
  
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label for="harga">Harga</label> 
-                        <input type="harga" name="harga" class="form-control" id="harga" value="{{ $Makanan->harga }}" aria-describedby="harga" > 
+                        <input type="text" name="harga_makanan" class="form-control" id="harga_makanan" value="{{ $Makanan->harga }}" aria-describedby="harga" > 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

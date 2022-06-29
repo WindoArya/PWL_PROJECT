@@ -17,7 +17,7 @@ class MakananController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $makanans = Makanan::all();
@@ -80,7 +80,7 @@ class MakananController extends Controller
     public function edit($kode_makanan)
     {
         $Makanan = Makanan::find($kode_makanan);
-        return view('makanan.edit', compact('Makanan'));
+        return view('crud.edit', compact('Makanan'));
     }
 
     /**
@@ -90,7 +90,7 @@ class MakananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $kode_makanan)
     {
         $request->validate([
             'kode_makanan' => 'required',
@@ -99,8 +99,7 @@ class MakananController extends Controller
         ]);
 
         Makanan::find($kode_makanan)->update($request->all());
-        return redirect()->route('makanan.index')
-            ->with('success', 'Makanan Berhasil Diupdate');
+        return redirect('/makanan');
  }
 
     /**

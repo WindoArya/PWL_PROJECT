@@ -10,5 +10,5 @@ class Makanan extends Model
     use HasFactory;
     protected $table = 'Makanan';
     protected $primaryKey = 'kode_makanan';
-    protected$fillable = ['kode_makanan'];
+    protected $fillable = ['kode_makanan', 'nama_makanan', 'harga_makanan'];
 }

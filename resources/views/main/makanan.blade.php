@@ -14,7 +14,7 @@
           <th>Nama</th>
           <th>Harga</th>
           <th>Foto</th>
-          <th>Edit</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -24,7 +24,14 @@
           <td>{{ $m->nama_makanan }}</td>
           <td>{{ $m->harga_makanan }}</td>
           <td></td>
-          <td></td>
+          <td>
+            <form action="{{ route('makanan.destroy', $m->kode_makanan) }}" method="POST">
+              <a class="btn btn-primary" href="{{ route('makanan.edit', $m->kode_makanan) }}">Edit</a>
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </td>
         </tr>
         @endforeach
         <tbody>
