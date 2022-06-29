@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\DataMasterController;
+use App\Http\Controllers\MakananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,6 @@ Route::get('/pegawai', [DataMasterController::class, 'pegawai'])->name('pegawai'
 Route::get('/pengeluaran', [DataMasterController::class, 'pengeluaran'])->name('pengeluaran');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+Route::resource('makanan', MakananController::class);
 

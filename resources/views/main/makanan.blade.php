@@ -18,32 +18,21 @@
         </tr>
         </thead>
         <tbody>
+        @foreach ($makanan as $m)
         <tr>
-          <td>x</td>
-          <td>x</td>
-          <td>x</td>
-          <td>x</td>
-          <td>X</td>
+          <td>{{ $m->kode_makanan }}</td>
+          <td>{{ $m->nama_makanan }}</td>
+          <td>{{ $m->harga_makanan }}</td>
+          <td></td>
+          <td></td>
         </tr>
+        @endforeach
+        <tbody>
       </table>
+      <div class="float-right my-2">
+        <a class="btn btn-success" href="{{ route('makanan.create') }}">Input Makanan</a>
+    </div>
     </div>
     <!-- /.card-body -->
   </div> 
-  <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
 @endsection

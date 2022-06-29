@@ -11,11 +11,6 @@ class DataMasterController extends Controller
         $this->middleware('auth');
     }
     
-    public function makanan(){
-        return view('Main.makanan')
-            ->with('category', 'Tabel Data Master')
-            ->with('title', 'Data Makanan');
-    }
     public function minuman(){
         return view('Main.minuman')
             ->with('category', 'Tabel Data Master')
