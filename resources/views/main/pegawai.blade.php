@@ -15,7 +15,7 @@
           <th>No Telepon</th>
           <th>Alamat</th>
           <th>Foto</th>
-          <th>Edit</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +27,9 @@
           <td>X</td>
         </tr>
       </table>
+      <div class="float-right my-2">
+        <a class="btn btn-success" href="{{ route('pegawai.create') }}">Input Pegawai</a>
+    </div>
     </div>
     <!-- /.card-body -->
   </div> 

@@ -14,7 +14,7 @@
           <th>Nama</th>
           <th>Harga</th>
           <th>Foto</th>
-          <th>Edit</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +26,9 @@
           <td>X</td>
         </tr>
       </table>
+      <div class="float-right my-2">
+        <a class="btn btn-success" href="{{ route('minuman.create') }}">Input Minuman</a>
+    </div>
     </div>
     <!-- /.card-body -->
   </div> 

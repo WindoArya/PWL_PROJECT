@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Makanan;
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class MakananController extends Controller
+class PelangganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,12 +20,12 @@ class MakananController extends Controller
 
     public function index()
     {
-        $makanans = Makanan::all();
-        $makanan = DB::table('makanan')->paginate(5);
-        $posts = Makanan::orderBy('kode_makanan', 'desc');
-        return view('main.makanan')
-            ->with('title', 'makanan')
-            ->with('makanan', $makanan)
+        $pelanggans = Pelanggan::all();
+        $pelanggan = DB::table('pelanggan')->paginate(5);
+        $posts = Pelanggan::orderBy('kode_pelanggan', 'desc');
+        return view('main.pelanggan')
+            ->with('title', 'pelanggan')
+            ->with('pelanggan', $pelanggan)
             ->with('category', 'Tabel Data Master');
     }
 
@@ -36,7 +36,7 @@ class MakananController extends Controller
      */
     public function create()
     {
-        return view('crud.makanancreate');
+        return view('crud.pelanggancreate');
     }
 
     /**
@@ -48,14 +48,15 @@ class MakananController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_makanan' => 'required',
-            'nama_makanan' => 'required',
-            'harga_makanan' => 'required',
+            'kode_pelanggan' => 'required',
+            'nama' => 'required',
+            'no_telepon' => 'required',
+            'alamat' => 'required',
         ]);
 
-        Makanan::create($request->all());
+        Pelanggan::create($request->all());
 
-        return redirect()->route('makanan.index')
+        return redirect()->route('pelanggan.index')
             ->with('success', 'Data Berhasil Ditambahkan');
     }
 
@@ -65,10 +66,10 @@ class MakananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($kode_makanan)
+    public function show($kode_pelanggan)
     {
-        $Makanan = Makanan::find($kode_makanan);
-        return view('makanan.detail', compact('Makanan'));
+        $Pelanggan = Pelanggan::find($kode_pelanggan);
+        return view('pelanggan.detail', compact('Pelanggan'));
     }
 
     /**
@@ -77,10 +78,10 @@ class MakananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($kode_makanan)
+    public function edit($kode_pelanggan)
     {
-        $Makanan = Makanan::find($kode_makanan);
-        return view('crud.makananedit', compact('Makanan'));
+        $Pelanggan = Pelanggan::find($kode_pelanggan);
+        return view('crud.pelangganedit', compact('Pelanggan'));
     }
 
     /**
@@ -90,16 +91,17 @@ class MakananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $kode_makanan)
+    public function update(Request $request, $kode_pelanggan)
     {
         $request->validate([
-            'kode_makanan' => 'required',
-            'nama_makanan' => 'required',
-            'harga_makanan' => 'required',
+            'kode_pelanggan' => 'required',
+            'nama' => 'required',
+            'no_telepon' => 'required',
+            'alamat' => 'required',
         ]);
 
-        Makanan::find($kode_makanan)->update($request->all());
-        return redirect('/makanan');
+        Pelanggan::find($kode_pelanggan)->update($request->all());
+        return redirect('/pelanggan');
  }
 
     /**
@@ -108,9 +110,10 @@ class MakananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($kode_makanan)
+    public function destroy($kode_pelanggan)
     {
-        Makanan::find($kode_makanan)->delete();
-        return redirect()->route('makanan.index');
+        Pelanggan::find($kode_pelanggan)->delete();
+        return redirect()->route('pelanggan.index')
+            -> with('success', 'Pelanggan Berhasil Dihapus');
     }
 }

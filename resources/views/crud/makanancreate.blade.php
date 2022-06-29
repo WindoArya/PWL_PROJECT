@@ -28,7 +28,7 @@
                     <input type="nama_makanan" name="nama_makanan" class="form-control" id="nama_makanan" aria-describedby="nama_makanan" > 
                 </div>
                 <div class="form-group">
-                    <label for="Kelas">Harga</label> 
+                    <label for="Harga">Harga</label> 
                     <input type="harga_makanan" name="harga_makanan" class="form-control" id="harga_makanan" aria-describedby="harga_makanan" > 
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
