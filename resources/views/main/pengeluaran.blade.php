@@ -24,9 +24,6 @@
           <td>x</td>
         </tr>
       </table>
-      <div class="float-right my-2">
-        <a class="btn btn-success" href="{{ route('pengeluaran.create') }}">Input Pengeluaran</a>
-    </div>
     </div>
     <!-- /.card-body -->
   </div> 

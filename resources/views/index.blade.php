@@ -3,6 +3,7 @@
   <head>
     <meta name="rf-tokencs" content="{{ csrf_token() }}">
     <title>{{$title}}</title>
+    <link rel="shortcut icon" href="{{asset('/asset/img/logo.png')}}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

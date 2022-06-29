@@ -6,7 +6,7 @@
  
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
-            <div class="card-header">Edit Pelanggan</div>
+            <div class="card-header">Edit Pegawai</div>
             <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
@@ -18,20 +18,20 @@
                     </ul>
                 </div>
                 @endif
-                    <form method="post" action="{{ route('pelanggan.update', $Pelanggan->kode_pelanggan) }}" id="myForm">
+                    <form method="post" action="{{ route('pegawai.update', $Pegawai->kode_pegawai) }}" id="myForm">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="kode_pelanggan">Kode Pelanggan</label> 
-                        <input type="text" name="kode_pelanggan" class="form-control" id="kode_pelanggan" value="{{ $Pelanggan->kode_pelanggan }}" aria-describedby="kode_pelanggan" > 
+                        <label for="kode_pegawai">Kode Pegawai</label> 
+                        <input type="text" name="kode_pegawai" class="form-control" id="kode_pegawai" value="{{ $Pegawai->kode_pegawai }}" aria-describedby="kode_pegawai" > 
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama</label> 
-                        <input type="text" name="nama" class="form-control" id="nama" value="{{ $Pelanggan->nama }}" aria-describedby="nama" > 
+                        <input type="text" name="nama" class="form-control" id="nama" value="{{ $Pegawai->nama }}" aria-describedby="nama" > 
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label> 
-                        <input type="text" name="alamat" class="form-control" id="alamat" value="{{ $Pelanggan->alamat }}" aria-describedby="alamat" > 
+                        <input type="text" name="alamat" class="form-control" id="alamat" value="{{ $Pegawai->alamat }}" aria-describedby="alamat" > 
                     </div>
                     <div class="form-group">
                         <label for="no_telepon">No Telepon</label> 

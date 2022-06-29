@@ -16,11 +16,6 @@ class DataMasterController extends Controller
             ->with('category', 'Tabel Data Master')
             ->with('title', 'Data Minuman');
     }
-    public function pegawai(){
-        return view('Main.pegawai')
-            ->with('category', 'Tabel Data Master')
-            ->with('title', 'Data Pegawai');
-    }
     public function pengeluaran(){
         return view('Main.pengeluaran')
         ->with('category', 'Tabel Data Master')

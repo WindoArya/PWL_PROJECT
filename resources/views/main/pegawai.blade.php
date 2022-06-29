@@ -19,13 +19,23 @@
         </tr>
         </thead>
         <tbody>
+        @foreach ($pegawai as $pe)
         <tr>
-          <td>x</td>
-          <td>x</td>
-          <td>x</td>
-          <td>x</td>
-          <td>X</td>
+          <td>{{ $pe->kode_pegawai }}</td>
+          <td>{{ $pe->nama}}</td>
+          <td>{{ $pe->no_telepon }}</td>
+          <td>{{ $pe->alamat }}</td>
+          <td>            
+            <form action="{{ route('pegawai.destroy', $pe->kode_pegawai) }}" method="POST">
+              <a class="btn btn-primary" href="{{ route('pegawai.edit', $pe->kode_pegawai) }}">Edit</a>
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
         </tr>
+        @endforeach
+        </tbody>
       </table>
       <div class="float-right my-2">
         <a class="btn btn-success" href="{{ route('pegawai.create') }}">Input Pegawai</a>
