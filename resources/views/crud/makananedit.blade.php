@@ -23,7 +23,7 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="kode_makanan">Kode Makanan</label> 
-                        <input type="text" name="kode_makanan" class="form-control" id="kode_makanan" value="{{ $Makanan->kode_makanan }}" aria-describedby="kode_makanan" > 
+                        <input type="text" name="kode_makanan" class="form-control" id="kode_makanan" value="{{ $Makanan->kode_makanan }}" aria-describedby="kode_makanan" readonly> 
                     </div>
                     <div class="form-group">
                         <label for="nama_makanan">Nama Makanan</label> 

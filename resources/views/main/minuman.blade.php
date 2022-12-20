@@ -8,6 +8,7 @@
     <!-- /.card-header -->
     <div class="card-body">
       <table id="example1" class="table table-bordered table-striped">
+        <caption>Table of Drink List</caption>
         <thead>
         <tr>
           <th>Kode Minuman</th>

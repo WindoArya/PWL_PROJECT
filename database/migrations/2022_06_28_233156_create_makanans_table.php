@@ -17,6 +17,7 @@ class CreateMakanansTable extends Migration
             $table->id('kode_makanan');
             $table->string('nama_makanan', 200);
             $table->integer('harga_makanan');
+            $table->string('foto_makanan', 200);
             $table->timestamps();
         });
     }

@@ -24,7 +24,7 @@ class MakananController extends Controller
         $makanan = DB::table('makanan')->paginate(5);
         $posts = Makanan::orderBy('kode_makanan', 'desc');
         return view('main.makanan')
-            ->with('title', 'makanan')
+            ->with('title', 'Data Makanan')
             ->with('makanan', $makanan)
             ->with('category', 'Tabel Data Master');
     }
@@ -48,7 +48,6 @@ class MakananController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_makanan' => 'required',
             'nama_makanan' => 'required',
             'harga_makanan' => 'required',
         ]);

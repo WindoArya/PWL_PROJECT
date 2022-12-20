@@ -24,7 +24,7 @@ class PelangganController extends Controller
         $pelanggan = DB::table('pelanggan')->paginate(5);
         $posts = Pelanggan::orderBy('kode_pelanggan', 'desc');
         return view('main.pelanggan')
-            ->with('title', 'pelanggan')
+            ->with('title', 'Data Pelanggan')
             ->with('pelanggan', $pelanggan)
             ->with('category', 'Tabel Data Master');
     }

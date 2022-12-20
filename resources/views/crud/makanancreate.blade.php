@@ -20,10 +20,6 @@
             <form method="post" action="{{ route('makanan.store') }}" id="myForm">
             @csrf
                 <div class="form-group">
-                    <label for="kode_makanan">Kode Makanan</label> 
-                    <input type="text" name="kode_makanan" class="form-control" id="kode_makanan" aria-describedby="kode_makanan" > 
-                </div>
-                <div class="form-group">
                     <label for="Nama">Nama Makanan</label> 
                     <input type="nama_makanan" name="nama_makanan" class="form-control" id="nama_makanan" aria-describedby="nama_makanan" > 
                 </div>

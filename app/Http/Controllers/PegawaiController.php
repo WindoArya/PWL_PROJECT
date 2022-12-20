@@ -24,7 +24,7 @@ class PegawaiController extends Controller
         $pegawai = DB::table('pegawai')->paginate(5);
         $posts = Pegawai::orderBy('kode_pegawai', 'desc');
         return view('main.pegawai')
-            ->with('title', 'pegawai')
+            ->with('title', 'Data Pegawai')
             ->with('pegawai', $pegawai)
             ->with('category', 'Tabel Data Master');
     }
